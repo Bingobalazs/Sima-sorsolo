@@ -1,0 +1,9 @@
+body{
+    background-image: url(../images/back.jpg);
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-color: rgb(59, 59, 59);
+    text-shadow: black 1px 0 10px;;
+}
