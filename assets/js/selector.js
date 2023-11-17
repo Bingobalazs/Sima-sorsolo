@@ -80,7 +80,7 @@ function Modosito(tggl) {
         document.getElementById("modify").style="display: block;"
         document.getElementById("main").style="display: none;"
     }else {
-        document.getElementById("modify").style="display: block;"
-        document.getElementById("main").style="display: none;"
+        document.getElementById("modify").style="display: none;"
+        document.getElementById("main").style="display: block;"
     }
 }
