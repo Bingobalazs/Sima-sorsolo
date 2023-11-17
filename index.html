@@ -10,7 +10,7 @@
  <div id="main">
 <p for="tetel" class="txtcntr"><b>Tétel:</b></p>
 <select name="tetel" id="tetel" >
-    <option value="RND"  style="font-weight: bold; background-color: black; color: white;">VÉLETLENSZERŰ TÉTEL VÁLASZTÁSA</option>
+    <option value="RND"  style="font-weight: bold; background-color: black; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>
     <option value="0" disabled style="font-weight: bold; background-color: black; color: white;">I. Témakör: Gazdaság, gazdaságpolitika, anyagi kultúra, pénzügyi és gazdasági ismeretek</option>
     <option value="1">1. A középkori város kialakulása és jellemzői</option>
     <option value="2">2. Károly Róbert és az Anjouk kora</option>
@@ -44,9 +44,39 @@
     <option value="20">20. A hidegháború kialakulás</option>
 </select>
 
+<p for="nev" class="txtcntr"><b>Felelő:</b></p>
+<select id="nev">
+    <option value="RND"  style="font-weight: bold; background-color: black; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>
+    <option value="Ádám Norbert">Ádám Norbert</option>
+    <option value="Balogh László Levente">Balogh László Levente</option>
+    <option value="Beke Roland">Beke Roland</option>
+    <option value="Bere Nándor">Bere Nándor</option>
+    <option value="Deme Ákos">Deme Ákos</option>
+    <option value="Egyedi Róbert">Egyedi Róbert</option>
+    <option value="Gál Balázs">Gál Balázs</option>
+    <option value="Illés Csaba">Illés Csaba</option>
+    <option value="Kovács Csaba">Kovács Csaba</option>
+    <option value="Kozma Máté">Kozma Máté</option>
+    <option value="Kulcsár Nándor">Kulcsár Nándor</option>
+    <option value="Maróti Gábor">Maróti Gábor</option>
+    <option value="Mészáros István">Mészáros István</option>
+    <option value="Monoki Gábor">Monoki Gábor</option>
+    <option value="M. Tóth Milán">M. Tóth Milán</option>
+    <option value="Nagy Attila">Nagy Attila</option>
+    <option value="Nagy Péter">Nagy Péter</option>
+    <option value="Papp Eszter">Papp Eszter</option>
+    <option value="Perecz István">Perecz István</option>
+    <option value="Puzsoma Sándor">Puzsoma Sándor</option>
+    <option value="Süveges-Szabó Zita">Süveges-Szabó Zita</option>
+    <option value="Szatmári Ádám">Szatmári Ádám</option>
+    <option value="Tatár Andor">Tatár Andor</option>
+    <option value="Vitális Zsuzsanna">Vitális Zsuzsanna</option>
+
+</select>
+
 <button id="modositogomb" onclick="Modosito(true)">Adatok módosítása</button>
 
- <button id="felelogomb" onclick="Sorsol()">Felelő</button>
+ <button id="felelogomb" onclick="Sorsol()">Sorsolás</button>
  <div style="text-align: center;">
  <h1 id="sorsNev"></h1>
  <h2 id="sorsTetel"></h2>
@@ -62,6 +92,11 @@
 </textarea>
      <br>
      <button id="vissza" onclick="Modosito(false)">Mentés</button>
+<p>Hiányzás vagy egyéb okok miatt lehet törölni neveket.
+    Egy név törlése esetén az nem tűnik el a kiválasztásból,
+    viszont a random sorsolás során nem kerül be a lehetőségek közé.
+    </p>
+
 
  </div>
  </body>

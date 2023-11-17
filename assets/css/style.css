@@ -8,7 +8,7 @@ body{
     background-size: cover;
     transition: 1.5s;
 }
-#tetel{
+#tetel, #nev{
     width: 80vw;
     margin: 0 auto;
     display: block;

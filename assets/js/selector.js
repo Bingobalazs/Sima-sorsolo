@@ -30,6 +30,9 @@ function Sorsol(params) {
         } else {
              tetelnev = tetelek[tetel-1]
         }
+
+
+        if (document.getElementById("nev").value=="RND"){
     if (tacBool) {
         
         
@@ -62,6 +65,8 @@ function Sorsol(params) {
          felelnev= sajat_adatok1[random]
 
     }
+            }
+        else felelnev=document.getElementById("nev").value
   
 Kiir()
 
@@ -83,4 +88,6 @@ function Modosito(tggl) {
         document.getElementById("modify").style="display: none;"
         document.getElementById("main").style="display: block;"
     }
+
+
 }
