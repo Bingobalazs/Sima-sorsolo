@@ -67,7 +67,8 @@ function Sorsol(params) {
     }
             }
         else felelnev=document.getElementById("nev").value
-  
+
+    if (felelnev=="Gál Balázs") window.alert("NEEEEEE :(((((")
 Kiir()
 
 }
