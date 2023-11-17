@@ -121,3 +121,11 @@ var tetelek = [
 
 
 ]
+
+var sajat_adatok1 = [
+
+]
+function adatChange(from) {
+    sajat_adatok1=(document.getElementById(from).value).split("\n")
+    
+}

@@ -9,27 +9,60 @@ var felelesek = []
 var tetelnev
 var felelnev
 var tetel=0
+var tacBool=true
+function TacMode(params) {
+    tacBool = document.getElementById("tac_mode_tggl").checked
+    if (tacBool) {
+        osztaly.forEach(element => {
+        document.getElementById("adat1Inp").innerHTML+=element.nev+"\n"
+    });
+    }else{
+        document.getElementById("adat1Inp").innerHTML=null
+    }
+    adatChange('adat1Inp')
+    
+}
 function Sorsol(params) {
     tetel =document.getElementById("tetel").value
-    if (tetel=="RND") {
-        tetel = Math.floor(Math.random() * tetelek.length)
-        tetelnev = tetelek[tetel] 
-    } else {
-         tetelnev = tetelek[tetel-1]
-    }
-    osztaly.forEach(element => {
-        if (true) {
-            for (let i = 0; i < element.esely; i++) {
-            nevek.push(element.nev)
-            
-            }    
+        if (tetel=="RND") {
+            tetel = Math.floor(Math.random() * tetelek.length)
+            tetelnev = tetelek[tetel] 
+        } else {
+             tetelnev = tetelek[tetel-1]
         }
-
+    if (tacBool) {
         
-    });
-    random = Math.floor(Math.random() * nevek.length)
-     felelnev= nevek[random-1]
-    felelesek.push( {nev:felelnev, huzott:tetelnev})
+        
+    
+        nevek = []
+        osztaly.forEach(element => {
+            if (sajat_adatok1.includes(element.nev)) {
+                for (let i = 0; i < element.esely; i++) {
+                    
+                    nevek.push(element.nev) 
+                    
+                    
+                }    
+            }
+            
+            
+        });
+        console.log(nevek);
+        random = Math.floor(Math.random() * nevek.length)
+         felelnev= nevek[random]
+        //felelesek.push( {nev:felelnev, huzott:tetelnev})
+
+
+
+
+
+    } else {
+        
+        random = Math.floor(Math.random() * sajat_adatok1.length)
+         felelnev= sajat_adatok1[random]
+
+    }
+  
 Kiir()
 
 }

@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
     <title>Sorsoló</title>
  </head>
- <body>
+ <body onload="TacMode()">
 <label for="tetel">Tétel</label>
 <select name="tetel" id="tetel">
     <option value="RND"  style="font-weight: bold; background-color: black; color: white;">VÉLETLENSZERŰ TÉTEL VÁLASZTÁSA</option>
@@ -42,6 +42,11 @@
     <option value="19">19. Magyarország hadba sodródásának folyamata</option>
     <option value="20">20. A hidegháború kialakulás</option>
 </select>
+<input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
+<label for="tacmode">12. TAC</label>
+<textarea name="adat1" id="adat1Inp" cols="20" rows="10" onchange="adatChange('adat1Inp')">
+
+</textarea>
  <button onclick="Sorsol()">Felelő</button>
  <div style="text-align: center;">
  <h1 id="sorsNev"></h1>
