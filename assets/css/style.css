@@ -6,4 +6,50 @@ body{
     background-size: 100vw;
     background-color: rgb(59, 59, 59);
     text-shadow: black 1px 0 10px;;
+    font-size: 30px;
+}
+#tetel{
+    width: 80vw;
+    margin: 0 auto;
+    display: block;
+}
+.txtcntr{
+    text-align: center;
+}
+select{
+    font-size: 30px;
+}
+#modify{
+    display: none;
+}
+#felelogomb, #modositogomb{
+    width: 80vw;
+    height: 5vh;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px!important;
+    border-radius: 25px;
+    font-size: 30px;
+}
+#vissza{
+    width: 80vw;
+    height: 5vh;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px!important;
+    border-radius: 25px;
+    font-size: 30px;
+}
+#felelogomb{
+    background-color: cornflowerblue;
+    color: white;
+}
+textarea{
+    width: 80vw;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px 15px 15px;
+    height: 65vh;
 }

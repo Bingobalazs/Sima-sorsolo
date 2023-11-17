@@ -7,8 +7,9 @@
     <title>Sorsoló</title>
  </head>
  <body onload="TacMode()">
-<label for="tetel">Tétel</label>
-<select name="tetel" id="tetel">
+ <div id="main">
+<p for="tetel" class="txtcntr"><b>Tétel:</b></p>
+<select name="tetel" id="tetel" >
     <option value="RND"  style="font-weight: bold; background-color: black; color: white;">VÉLETLENSZERŰ TÉTEL VÁLASZTÁSA</option>
     <option value="0" disabled style="font-weight: bold; background-color: black; color: white;">I. Témakör: Gazdaság, gazdaságpolitika, anyagi kultúra, pénzügyi és gazdasági ismeretek</option>
     <option value="1">1. A középkori város kialakulása és jellemzői</option>
@@ -42,16 +43,27 @@
     <option value="19">19. Magyarország hadba sodródásának folyamata</option>
     <option value="20">20. A hidegháború kialakulás</option>
 </select>
-<input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
-<label for="tacmode">12. TAC</label>
-<textarea name="adat1" id="adat1Inp" cols="20" rows="10" onchange="adatChange('adat1Inp')">
 
-</textarea>
- <button onclick="Sorsol()">Felelő</button>
+<button id="modositogomb" onclick="Modosito(true)">Adatok módosítása</button>
+
+ <button id="felelogomb" onclick="Sorsol()">Felelő</button>
  <div style="text-align: center;">
  <h1 id="sorsNev"></h1>
  <h2 id="sorsTetel"></h2>
 </div>
+ </div>
+
+
+ <div id="modify">
+     <input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
+     <label for="tac_mode_tggl">12. TAC</label>
+     <br>
+     <textarea name="adat1" id="adat1Inp" cols="50" rows="15" onchange="adatChange('adat1Inp')">
+</textarea>
+     <br>
+     <button id="vissza" onclick="Modosito(false)">Mentés</button>
+
+ </div>
  </body>
  </html>
  <script src="assets/js/data_reader.js"></script>

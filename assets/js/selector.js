@@ -75,3 +75,12 @@ function Kiir(params) {
     document.getElementById("sorsNev").innerHTML= felelnev
     document.getElementById("sorsTetel").innerHTML= tetelnev
 }
+function Modosito(tggl) {
+    if (tggl) {
+        document.getElementById("modify").style="display: block;"
+        document.getElementById("main").style="display: none;"
+    }else {
+        document.getElementById("modify").style="display: block;"
+        document.getElementById("main").style="display: none;"
+    }
+}
