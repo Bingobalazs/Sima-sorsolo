@@ -44,8 +44,17 @@ select{
     background-color: cornflowerblue;
     color: white;
 }
-textarea{
-    width: 80vw;
+#adat2Inp{
+    width: 40vw;
+    margin: 0 auto;
+    display: block;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px 15px 15px;
+    height: 65vh;
+}
+#adat1Inp{
+    width: 40vw;
     margin: 0 auto;
     display: block;
     border-radius: 25px;

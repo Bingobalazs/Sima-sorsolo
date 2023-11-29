@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
     <title>Sorsoló</title>
  </head>
- <body onload="TacMode()">
+ <body onload="TacMode(); ToriMode()">
  <div id="main">
 <p for="tetel" class="txtcntr"><b>Tétel:</b></p>
 <select name="tetel" id="tetel" >
@@ -85,11 +85,22 @@
 
 
  <div id="modify">
-     <input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
-     <label for="tac_mode_tggl">12. TAC</label>
+     
      <br>
+     <div style="display: flex; justify-content: center;">
+        <div> 
+            <input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
+     <label for="tac_mode_tggl">12. TAC</label>
      <textarea name="adat1" id="adat1Inp" cols="50" rows="15" onchange="adatChange('adat1Inp')">
 </textarea>
+</div>
+<div >
+    <input type="checkbox" name="torimode" id="tori_mode_tggl" checked onchange="ToriMode()">
+     <label for="tac_mode_tggl">Történelem érettségi tételek</label>
+<textarea name="adat2" id="adat2Inp" cols="50" rows="15" onchange="adatChange2('adat2Inp'); ToriMode()">
+</textarea>
+</div>
+</div>
      <br>
      <button id="vissza" onclick="Modosito(false)">Mentés</button>
 <p>Hiányzás vagy egyéb okok miatt lehet törölni neveket.

@@ -97,7 +97,7 @@ var osztaly = [
     },
 
 ]
-var tetelek = [
+var ToriTetelek = [
     "1. A középkori város kialakulása és jellemzői",
     "2. Károly Róbert és az Anjouk kora",
     "3. A nagy földrajzi felfedezések és következményei",
@@ -122,10 +122,12 @@ var tetelek = [
 
 ]
 
-var sajat_adatok1 = [
-
-]
+var sajat_adatok1 = []
+var sajat_adatok2 = []
 function adatChange(from) {
     sajat_adatok1=(document.getElementById(from).value).split("\n")
-    
+
+}
+function adatChange2(from) {
+    sajat_adatok2=(document.getElementById(from).value).split("\n")
 }
