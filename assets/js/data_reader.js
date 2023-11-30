@@ -126,8 +126,40 @@ var sajat_adatok1 = []
 var sajat_adatok2 = []
 function adatChange(from) {
     sajat_adatok1=(document.getElementById(from).value).split("\n")
+    document.getElementById("nev").innerHTML=null
+    document.getElementById("nev").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: black; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>'
+    sajat_adatok1.forEach(element => {
+        if (element[0]=="*") {
+            document.getElementById("nev").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: black; color: white;">'+element+'</option>'
+
+        } else {
+            document.getElementById("nev").innerHTML+='<option value="'+element+'">'+element+'</option>'
+        }
+    });
 
 }
 function adatChange2(from) {
     sajat_adatok2=(document.getElementById(from).value).split("\n")
+    document.getElementById("tetel").innerHTML=null
+    document.getElementById("tetel").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: black; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>'
+    sajat_adatok2.forEach(element => {
+        if (element[0]=="*") {
+            document.getElementById("tetel").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: black; color: white;">'+element+'</option>'
+
+        } else {
+            document.getElementById("tetel").innerHTML+='<option value="'+element+'">'+element+'</option>'
+        }
+    });
+}
+function LoadFromCookie(cookie, target){
+    console.log(target);
+    console.log(target.value);
+    console.log(cookie);
+    var adatok= cookie.split(',')
+    adatok.forEach(element => {
+        target.value+=element+"\n"
+    });
+    target.value = target.value.replace(/\n+$/, '');
+    adatChange2('adat2Inp')
+    adatChange('adat1Inp')
 }

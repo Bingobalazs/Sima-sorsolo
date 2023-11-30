@@ -93,12 +93,17 @@
      <label for="tac_mode_tggl">12. TAC</label>
      <textarea name="adat1" id="adat1Inp" cols="50" rows="15" onchange="adatChange('adat1Inp')">
 </textarea>
+<button id="CooMentes1" onclick="setCookie('SajatAdat1', sajat_adatok1, 300);">Mentés sütibe</button>
+<button onclick="LoadFromCookie(getCookie('SajatAdat1'), document.getElementById('adat1Inp'))">Betöltés sütiből</button>
+
 </div>
 <div >
     <input type="checkbox" name="torimode" id="tori_mode_tggl" checked onchange="ToriMode()">
      <label for="tac_mode_tggl">Történelem érettségi tételek</label>
 <textarea name="adat2" id="adat2Inp" cols="50" rows="15" onchange="adatChange2('adat2Inp'); ToriMode()">
 </textarea>
+<button id="CooMentes2" onclick="setCookie('SajatAdat2', sajat_adatok2, 300);">Mentés sütibe</button>
+<button onclick="LoadFromCookie(getCookie('SajatAdat2'), document.getElementById('adat2Inp'))">Betöltés sütiből</button>
 </div>
 </div>
      <br>
@@ -114,3 +119,4 @@
  </html>
  <script src="assets/js/data_reader.js"></script>
 <script src="assets/js/selector.js"></script>
+<script src="assets/js/kuki.js"></script>
