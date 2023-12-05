@@ -1,136 +1,113 @@
 var osztaly = [
     {
         nev: "Ádám Norbert",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Kovács Csaba",
-        esely: 7 
+        esely: 1
     },
     {
         nev: "Egyedi Róbert",
-        esely: 7 
+        esely: 1
     },
     {
         nev: "Kozma Máté",
-        esely: 7 
+        esely: 1
     },
     {
         nev: "Puzsoma Sándor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Nagy Péter",
-        esely: 7 
+        esely: 1
     },
     {
         nev: "Monoki Gábor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Nagy Attila",
-        esely: 6 
+        esely: 1
     },
     {
         nev: "Mészáros István",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Bere Nándor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Gál Balázs",
-        esely: 4 
+        esely: 1
     },
     {
         nev: "Szatmári Ádám",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Beke Roland",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Tatár Andor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Deme Ákos",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Kulcsár Nándor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Balogh László Levente",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Illés Csaba",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Perecz István",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Papp Eszter",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Vitális Zsuzsanna",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Süveges-Szabó Zita",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "Maróti Gábor",
-        esely: 10 
+        esely: 1
     },
     {
         nev: "M. Tóth Milán",
-        esely: 10 
+        esely: 1
     },
 
 ]
-var ToriTetelek = [
-    "1. A középkori város kialakulása és jellemzői",
-    "2. Károly Róbert és az Anjouk kora",
-    "3. A nagy földrajzi felfedezések és következményei",
-    "4. Az első és második ipari forradalom és következményei",
-    "5. A XVIII. századi magyar társadalom",
-    "6. A magyar polgárosodás társadalmi jellegzetességei és sajátosságai",
-    "7. Életmód és mindennapok a Kádár-korszakban",
-    "8. A középkori magyar királyság megteremtése",
-    "9. A központosított rendi monarchia a Hunyadiak korában",
-    "10. A reformmozgalom kibontakozása",
-    "11. Az Egyesült Nemzetek Szervezete",
-    "12. A Horthy-korszak politikai berendezkedése (Bethlen, Teleki)",
-    "13. A dualizmus kora",
-    "14. A reformáció",
-    "15. Mária Terézia és II. József reformjai",
-    "16. A kommunista Szovjetunió",
-    "17. Az első világháború lezárása",
-    "18. A várháborúk időszaka (1526-1568)",
-    "19. Magyarország hadba sodródásának folyamata",
-    "20. A hidegháború kialakulása",
 
-
-]
 
 var sajat_adatok1 = []
 var sajat_adatok2 = []
 function adatChange(from) {
-    sajat_adatok1=(document.getElementById(from).value).split("\n")
+    sajat_adatok1=((document.getElementById(from).value).replace(/\n+$/, '')).split("\n")
     document.getElementById("nev").innerHTML=null
-    document.getElementById("nev").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: black; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>'
+    document.getElementById("nev").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: darkgrey; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>'
     sajat_adatok1.forEach(element => {
         if (element[0]=="*") {
-            document.getElementById("nev").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: black; color: white;">'+element+'</option>'
+            document.getElementById("nev").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: darkgrey; color: white;">'+element+'</option>'
 
         } else {
             document.getElementById("nev").innerHTML+='<option value="'+element+'">'+element+'</option>'
@@ -139,21 +116,30 @@ function adatChange(from) {
 
 }
 function adatChange2(from) {
-    sajat_adatok2=(document.getElementById(from).value).split("\n")
+    sajat_adatok2=((document.getElementById(from).value).replace(/\n+$/, '')).split("\n")
+    sajat_adatok2=sajat_adatok2
     document.getElementById("tetel").innerHTML=null
-    document.getElementById("tetel").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: black; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>'
+    document.getElementById("tetel").innerHTML+='<option value="RND"  style="font-weight: bold; background-color: darkgrey; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>'
     sajat_adatok2.forEach(element => {
         if (element[0]=="*") {
-            document.getElementById("tetel").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: black; color: white;">'+element+'</option>'
+
+            document.getElementById("tetel").innerHTML+='<option value="0" disabled style="font-weight: bold; background-color: darkgrey; color: white;">'+element.slice(1)+'</option>'
 
         } else {
             document.getElementById("tetel").innerHTML+='<option value="'+element+'">'+element+'</option>'
         }
     });
+    sajat_adatok2.forEach(element => {
+        if (!(element[0]=="*")){
+
+            tetelek.push(element)
+        }
+    });
+    document.getElementById("tori_mode_tggl").checked=false
+
 }
 function LoadFromCookie(cookie, target){
-    console.log(target);
-    console.log(target.value);
+    target.value=null
     console.log(cookie);
     var adatok= cookie.split(',')
     adatok.forEach(element => {

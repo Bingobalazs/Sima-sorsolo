@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="assets/css/style.css">
     <title>Sorsoló</title>
  </head>
- <body onload="TacMode(); ToriMode()">
+ <body onload="TacMode(); ToriMode(ToriTetelek)">
  <div id="main">
 <p for="tetel" class="txtcntr"><b>Tétel:</b></p>
-<select name="tetel" id="tetel" >
-    <option value="RND"  style="font-weight: bold; background-color: black; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>
+<select name="tetel" id="tetel">
+    <option value="RND"  style="font-weight: bold; background-color: darkgrey; color: white;">TÉTEL VÉLETLENSZERŰ VÁLASZTÁSA</option>
     <option value="0" disabled style="font-weight: bold; background-color: black; color: white;">I. Témakör: Gazdaság, gazdaságpolitika, anyagi kultúra, pénzügyi és gazdasági ismeretek</option>
     <option value="1">1. A középkori város kialakulása és jellemzői</option>
     <option value="2">2. Károly Róbert és az Anjouk kora</option>
@@ -45,8 +45,8 @@
 </select>
 
 <p for="nev" class="txtcntr"><b>Felelő:</b></p>
-<select id="nev">
-    <option value="RND"  style="font-weight: bold; background-color: black; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>
+<select id="nev" >
+    <option value="RND"  style="font-weight: bold; background-color: darkgrey; color: white;">NÉV VÉLETLENSZERŰ VÁLASZTÁSA</option>
     <option value="Ádám Norbert">Ádám Norbert</option>
     <option value="Balogh László Levente">Balogh László Levente</option>
     <option value="Beke Roland">Beke Roland</option>
@@ -89,29 +89,60 @@
      <br>
      <div style="display: flex; justify-content: center;">
         <div> 
-            <input type="checkbox" name="tacmode" id="tac_mode_tggl" checked onchange="TacMode()">
-     <label for="tac_mode_tggl">12. TAC</label>
      <textarea name="adat1" id="adat1Inp" cols="50" rows="15" onchange="adatChange('adat1Inp')">
 </textarea>
-<button id="CooMentes1" onclick="setCookie('SajatAdat1', sajat_adatok1, 300);">Mentés sütibe</button>
-<button onclick="LoadFromCookie(getCookie('SajatAdat1'), document.getElementById('adat1Inp'))">Betöltés sütiből</button>
 
-</div>
+            <div class="sutiDiv">
+                <button class="sutiBtn" id="CooMentes1" onclick="setCookie('SajatAdat1', sajat_adatok1, 300);">🍪 Mentés</button>
+                <button class="sutiBtn" onclick="LoadFromCookie(getCookie('SajatAdat1'), document.getElementById('adat1Inp'))">🍪 Betöltés</button>
+            </div>
+            <div class="presetLoaders">
+                <select id="nevPresetSelect" onchange="nevPresetLoad(document.getElementById('nevPresetSelect').value)">
+                    <option value="12tac">12.TAC</option>
+                    <option value="Hittanfakt">Hittan Fakt</option>
+                    <option value="NullObj" style="font-weight: bold; background-color: darkgrey; color: white;">Saját adatok</option>
+                </select>
+
+
+
+            </div>
+
+
+
+        </div>
 <div >
-    <input type="checkbox" name="torimode" id="tori_mode_tggl" checked onchange="ToriMode()">
-     <label for="tac_mode_tggl">Történelem érettségi tételek</label>
-<textarea name="adat2" id="adat2Inp" cols="50" rows="15" onchange="adatChange2('adat2Inp'); ToriMode()">
+
+<textarea name="adat2" id="adat2Inp" cols="50" rows="15" onchange="adatChange2('adat2Inp'); ">
 </textarea>
-<button id="CooMentes2" onclick="setCookie('SajatAdat2', sajat_adatok2, 300);">Mentés sütibe</button>
-<button onclick="LoadFromCookie(getCookie('SajatAdat2'), document.getElementById('adat2Inp'))">Betöltés sütiből</button>
+    <div class="sutiDiv">
+        <button class="sutiBtn" id="CooMentes2" onclick="setCookie('SajatAdat2', sajat_adatok2, 300);">🍪 Mentés</button>
+        <button class="sutiBtn" onclick="LoadFromCookie(getCookie('SajatAdat2'), document.getElementById('adat2Inp'))">🍪 Betöltés</button>
+    </div>
+    <div class="presetLoaders">
+        <select id="presetSelect" onchange="PresetLoad(document.getElementById('presetSelect').value)">
+            <option value="ToriTetelek">Történelemn érettségi tételek</option>
+            <option value="NullObj" style="font-weight: bold; background-color: darkgrey; color: white;">Saját adatok</option>
+
+        </select>
+
+
+
+    </div>
+
 </div>
 </div>
      <br>
      <button id="vissza" onclick="Modosito(false)">Mentés</button>
-<p>Hiányzás vagy egyéb okok miatt lehet törölni neveket.
-    Egy név törlése esetén az nem tűnik el a kiválasztásból,
-    viszont a random sorsolás során nem kerül be a lehetőségek közé.
-    </p>
+     <br>
+     <h1>Használat:</h1>
+<p>A listaelemek választásánál kiválaszthatóak előre definiált listák;
+    de a "saját adatok"-kal mi is megadhatunk sorsolni kívánt adatokat</p>
+     <p>
+         A beírt saját adatokat, az adatmező alatt található gombbal tudjuk menteni sütibe,
+         az elmentett adatot pedig be tudjuk tölteni. A sütik a felhasználói
+         számítógépen kerülnek tárolásra!
+
+     </p>
 
 
  </div>
@@ -120,3 +151,4 @@
  <script src="assets/js/data_reader.js"></script>
 <script src="assets/js/selector.js"></script>
 <script src="assets/js/kuki.js"></script>
+<script src="assets/js/Presets.js"></script>

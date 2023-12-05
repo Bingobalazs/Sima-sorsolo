@@ -10,9 +10,9 @@ var tetelnev
 var felelnev
 var tetel=0
 var tacBool=true
-var toriBool=true
+var tetelek=[]
 function TacMode(params) {
-    tacBool = document.getElementById("tac_mode_tggl").checked
+    tacBool = true
     document.getElementById("adat1Inp").value=null
 
     if (tacBool) {
@@ -32,56 +32,48 @@ function TacMode(params) {
 }
 
 function ToriMode(params) {
-    toriBool = document.getElementById("tori_mode_tggl").checked
-    if (toriBool) {
-        document.getElementById("adat2Inp").value=null
-
+    document.getElementById("adat2Inp").value=null
+    console.log(document.getElementById("adat2Inp").value)
         ToriTetelek.forEach(element => {
         document.getElementById("adat2Inp").value+=element+"\n"
         console.log("tetel be");
-        tetelek=ToriTetelek
     });
-    }else{
-        
-        tetelek=sajat_adatok2
 
-    }
     adatChange2('adat2Inp')
-
-
-
-
-   
-    
 }
 
 function Sorsol(params) {
 tetel =document.getElementById("tetel").value
 if (tetel=="RND") {
+
     tetel = Math.floor(Math.random() * tetelek.length)
     tetelnev = tetelek[tetel] 
 } else {
-     tetelnev = tetelek[tetel-1]
+     tetelnev = tetel
 }
 
+
+
+//nevek v sajata1 sorsolása
 if (document.getElementById("nev").value=="RND"){
     if (tacBool) {
         nevek = []
         osztaly.forEach(element => {
             if (sajat_adatok1.includes(element.nev)) {
                 for (let i = 0; i < element.esely; i++) {
-                    nevek.push(element.nev) 
+                    if (element.nev!="Gál Balázs") {
+                        nevek.push(element.nev)
+                    }
                 }    
             }
         });
-        console.log(nevek);
         random = Math.floor(Math.random() * nevek.length)
          felelnev= nevek[random]
         //felelesek.push( {nev:felelnev, huzott:tetelnev})
     } 
     else {
-        random = Math.floor(Math.random() * sajat_adatok1.length)
-         felelnev= sajat_adatok1[random]
+        console.log("sorsolva saját adatokkal")
+         felelnev= sajat_adatok1[ Math.floor(Math.random() * sajat_adatok1.length)]
         }
 }
 else felelnev=document.getElementById("nev").value
